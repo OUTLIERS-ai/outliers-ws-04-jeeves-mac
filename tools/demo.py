@@ -146,6 +146,10 @@ def sessions(home, brain_dir, crm_dir, now):
 
 
 def build(root, port=4099, now=None):
+    # the same download links the installer writes: the Mac copies on a Mac (wave 6)
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from jeeves.config import app_repo
     now = now or datetime.now()
     root = Path(root).resolve()
     home = root / "home"
@@ -158,9 +162,9 @@ def build(root, port=4099, now=None):
         "agents_dirs": [], "claude_home": str(home / ".claude"),
         "claude_command": [sys.executable, str(HERE / "fake_claude.py")],
         "apps": {"projectforge": {"url": "http://127.0.0.1:3020",
-                                  "repo": "https://github.com/OUTLIERS-ai/outliers-ws-03-projectforge"},
+                                  "repo": app_repo("outliers-ws-03-projectforge")},
                  "fleetview": {"url": "http://127.0.0.1:3010",
-                               "repo": "https://github.com/OUTLIERS-ai/outliers-ws-02-fleetview"}},
+                               "repo": app_repo("outliers-ws-02-fleetview")}},
         "ccusage": "off",
     }
     cfg_path = root / "config.json"

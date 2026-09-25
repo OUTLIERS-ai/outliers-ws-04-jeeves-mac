@@ -23,6 +23,9 @@ def test_the_today_panel_says_python3(tmp_path):
     from jeeves import vaults
     crm = tmp_path / "CRM"
     crm.mkdir()
+    # the instruction is only given when the CRM has the program it names (wave 6, 2026-09-25)
+    (crm / "_engine").mkdir()
+    (crm / "_engine" / "today.py").write_text("print('today')\n", encoding="utf-8")
     brain = tmp_path / "Second Brain"
     brain.mkdir()
     out = vaults.today({"crm_vault": str(crm), "second_brain": str(brain)})

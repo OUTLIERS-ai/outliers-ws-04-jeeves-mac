@@ -54,6 +54,14 @@ PLIST_NAME = "ai.outliers.jeeves.plist"
 # The command a member types to run Python: a Mac has python3 and no plain python.
 PY = "python3" if sys.platform == "darwin" else "python"
 
+# When the start-up file runs, in the words each system's member reads. On a Mac "log in" alone
+# reads as needing an account (Ashley, 2026-09-24), so the Mac says "switch on your Mac and sign
+# in". The other systems keep exactly the words this installer printed before (wave 6, 2026-09-25).
+_MAC = sys.platform == "darwin"
+WHEN_STARTS = "when you switch on your Mac and sign in" if _MAC else "when the computer starts"
+EACH_TIME = ("each time you switch on your Mac and sign in" if _MAC
+             else "each time you switch on this computer and sign in")
+
 
 def too_old(info):
     """True when this Python is older than Jeeves needs. Kept apart so it can be tested
@@ -235,8 +243,8 @@ def belongs_here(path):
 
 
 def not_ours(target):
-    return ("Another Jeeves folder already starts by itself when the computer starts (%s)."
-            % target + "\n  Left as it is. To move it to this folder, run  %s install.py" % PY
+    return ("Another Jeeves folder already starts by itself %s (%s)."
+            % (WHEN_STARTS, target) + "\n  Left as it is. To move it to this folder, run  %s install.py" % PY
             + " --uninstall  in that folder first.")
 
 
@@ -259,9 +267,21 @@ def install_launcher():
         if target.exists() and not belongs_here(target):
             return not_ours(target)
         atomic_write(target, plist_text())
-        return ("Wrote %s. To switch it on now run:\n     launchctl load %s" % (target, target))
+        return ("Wrote %s. It starts Jeeves, with no window, each time you switch on your Mac and sign in.\n"
+                "To start it now, without signing out, run:\n     launchctl load %s" % (target, target))
     return ("On Linux, add this line to 'crontab -e' to start Jeeves when the computer starts:\n"
             "     @reboot cd %s && %s start.py --no-open" % (HERE, sys.executable))
+
+
+def unload_launch_agent(path):
+    """Mac: switch the job off in launchd before its file goes, so `launchctl list` no longer
+    shows it and a Jeeves it started stops now, not at the next log-out (wave 6, 2026-09-25).
+    A job that was never loaded makes launchctl say so; that is not an error here."""
+    try:
+        subprocess.run(["launchctl", "unload", str(path)], capture_output=True, text=True,
+                       timeout=30, creationflags=NO_WINDOW)
+    except Exception:  # noqa: BLE001
+        pass
 
 
 def remove_launcher():
@@ -270,6 +290,8 @@ def remove_launcher():
         if not p.exists():
             continue
         if belongs_here(p):
+            if sys.platform == "darwin" and p.suffix == ".plist":
+                unload_launch_agent(p)
             p.unlink()
             done.append(str(p))
         else:
@@ -292,7 +314,7 @@ def hidden_start_file():
 # ------------------------------------------------------------------ main
 
 def uninstall():
-    say("", "Stopping Jeeves and removing the file that starts it when the computer starts",
+    say("", "Stopping Jeeves and removing the file that starts it %s" % WHEN_STARTS,
         "(your config.json and vaults are not touched).", "")
     try:
         sys.path.insert(0, str(HERE))
@@ -306,7 +328,7 @@ def uninstall():
     for k in kept:
         say("left in place  %s  (it starts Jeeves from another folder)" % k)
     if not gone and not kept:
-        say("Nothing was set to start Jeeves when the computer starts.")
+        say("Nothing was set to start Jeeves %s." % WHEN_STARTS)
     say("", "To remove Jeeves completely, delete this folder: %s" % HERE, "")
     return 0
 
@@ -355,13 +377,19 @@ def copy_to(dest, port=None):
     say("Made a copy of Jeeves to experiment on: %s" % dest,
         "It reads the same note folders as this one, on port %d instead of %d." % (port, ours),
         "It starts a new conversation. Your everyday Jeeves is not touched, and neither is",
-        "the file that starts it when the computer starts.")
+        "the file that starts it %s." % WHEN_STARTS)
     if os.name == "nt":
         atomic_write(dest / "Start Jeeves (hidden).vbs", vbs_text(dest, dest / "config.json"))
         say("Its own Start Jeeves (hidden).vbs starts the copy, not this one.")
     say("", "Start the copy:", "", "    cd %s" % dest, "    %s start.py" % PY, "",
         "It opens http://127.0.0.1:%d/ . Ctrl+C in that terminal stops it." % port, "")
     return 0
+
+
+def ccusage_install():
+    """The line that installs ccusage on this computer (jeeves/config.py)."""
+    from jeeves.config import CCUSAGE_INSTALL
+    return CCUSAGE_INSTALL
 
 
 def main(argv=None):
@@ -371,10 +399,10 @@ def main(argv=None):
     ap.add_argument("--agents", help="a folder of Claude Code agents")
     ap.add_argument("--port", type=int)
     ap.add_argument("--launcher", action="store_true",
-                    help="start by itself, with no window, when the computer starts")
+                    help="start by itself, with no window, %s" % WHEN_STARTS)
     ap.add_argument("--yes", action="store_true", help="accept every default, ask nothing")
     ap.add_argument("--uninstall", action="store_true",
-                    help="stop Jeeves and remove the file that starts it when the computer starts")
+                    help="stop Jeeves and remove the file that starts it %s" % WHEN_STARTS)
     ap.add_argument("--copy", metavar="FOLDER",
                     help="make a second copy to experiment on, with its own port")
     ap.add_argument("--skip-claude-check", action="store_true", help=argparse.SUPPRESS)
@@ -422,7 +450,7 @@ def main(argv=None):
         except Exception:  # noqa: BLE001
             v = ""
         say("Found Claude Code %s" % (v or "(version unknown)"))
-    say("Python %s - nothing to pip install." % sys.version.split()[0], "")
+    say("Python %s - nothing to install with pip." % sys.version.split()[0], "")
 
     old = {}
     if CONFIG.exists():
@@ -476,7 +504,7 @@ def main(argv=None):
     # 3. Nice to have, never required.
     say("", "Optional extras:")
     say("  ccusage (shows your 5-hour usage window): %s"
-        % ("found" if shutil.which("ccusage") else "not found - needs Node.js, then: npm install -g ccusage"))
+        % ("found" if shutil.which("ccusage") else "not found - needs Node.js, then: " + ccusage_install()))
     try:
         import playwright  # noqa: F401
         pw = "found"
@@ -525,12 +553,11 @@ def main(argv=None):
             % hs[0].name)
 
     # 5. Start by itself when the computer starts? Off unless you say yes.
-    if a.launcher or yes("Start Jeeves by itself, with no window, each time you switch on "
-                         "this computer and sign in?", False, a):
+    if a.launcher or yes("Start Jeeves by itself, with no window, %s?" % EACH_TIME, False, a):
         say(install_launcher())
     else:
-        say("Jeeves will not start by itself when the computer starts. "
-            "Start it yourself with:  %s start.py" % PY)
+        say("Jeeves will not start by itself %s. " % WHEN_STARTS
+            + "Start it yourself with:  %s start.py" % PY)
 
     say("", "-" * 66,
         "Done. Start it now:", "",

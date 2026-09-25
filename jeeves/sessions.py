@@ -225,7 +225,7 @@ def ccusage_block(cfg):
     exe = shutil.which("ccusage")
     if not exe:
         return {"available": False,
-                "reason": "ccusage is not installed. It needs Node.js: npm install -g ccusage"}
+                "reason": "ccusage is not installed. It needs Node.js: " + C.CCUSAGE_INSTALL}
 
     def run():
         env = dict(os.environ)

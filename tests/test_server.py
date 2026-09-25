@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """The server's routes, against made-up vaults and fake session logs."""
 import json
+import sys
 import urllib.error
 
 import pytest
@@ -84,8 +85,10 @@ def test_inbox_reads_the_recommendations_file(server):
 def test_apps_not_running_says_so_with_the_link(server):
     d = get_json(server[0] + "/api/apps")
     assert d["projectforge"]["up"] is False
-    assert d["projectforge"]["repo"].endswith("outliers-ws-03-projectforge")
-    assert d["fleetview"]["repo"].endswith("outliers-ws-02-fleetview")
+    # the practice world uses the installer's links: the Mac copies on a Mac (wave 6)
+    end = "-mac" if sys.platform == "darwin" else ""
+    assert d["projectforge"]["repo"].endswith("outliers-ws-03-projectforge" + end)
+    assert d["fleetview"]["repo"].endswith("outliers-ws-02-fleetview" + end)
 
 
 def test_wrong_host_is_refused(server):

@@ -492,6 +492,7 @@ async function renderOverview(body) {
     let h;
     if (!td.crm) h = '<div class="muted">No CRM folder is set in config.json.</div>';
     else if (td.crm.exists === false) h = missingFolder(td.crm.vault, 'crm_vault', td.crm.refused);
+    else if (!td.crm.found && td.crm.no_today_tool) h = '<div class="muted">' + esc(td.crm.hint) + '</div>';
     else if (!td.crm.found) h = '<div class="muted">Your CRM has no <code>Today.md</code> yet. Build it in your CRM folder with <code>' + esc(CFG.python || 'python') + ' _engine/today.py --write</code>.</div>';
     else {
       const rows = crmPeople(td.crm.text);

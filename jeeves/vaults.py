@@ -237,6 +237,12 @@ def today(cfg, now=None):
             out["crm"] = {"found": False, "exists": False, "vault": str(root),
                           "hint": "Your CRM folder does not exist: %s . Check \"crm_vault\" "
                                   "in config.json." % root}
+        elif sys.platform == "darwin" and not (root / "_engine" / "today.py").is_file():
+            # A CRM from the first CRM sessions has no program that writes Today.md; it comes with
+            # part 7. Telling the member to run it only gives them an error (wave 6, 2026-09-25).
+            out["crm"] = {"found": False, "exists": True, "vault": str(root), "no_today_tool": True,
+                          "hint": "No Today.md yet. Your CRM gets its Today list in part 7 of the CRM "
+                                  "sessions, which adds the program that writes it."}
         else:
             out["crm"] = {"found": False, "exists": True, "vault": str(root),
                           "hint": "No Today.md yet. In your CRM folder run: %s _engine/today.py --write"

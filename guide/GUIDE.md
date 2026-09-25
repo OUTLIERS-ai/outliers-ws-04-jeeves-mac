@@ -22,6 +22,7 @@ This is piece 4 of 4 in the agent workspace. Install them in order: 1 agent-flow
 | CRM | Your customer-records notes: the folder of people and conversations you built in the CRM sessions. |
 | Claude Code | The Claude program you type to in a terminal. Jeeves sends your chat messages to it. |
 | Terminal | The text window where you type commands. On a Mac it is the Terminal app, in Applications, then Utilities. |
+| `~` | Short for your home folder, the folder with your name and the house picture in Finder's sidebar. `~/CRM` is the folder called CRM inside it. |
 | Token | The unit Claude's usage is counted in. 4 tokens are about 3 words. |
 | Model | Which Claude model answers. Jeeves offers 3, each named in full: Claude Opus 5.5 (strongest), Claude Sonnet 5 (middle) and Claude Haiku 4.5 (cheapest). |
 | Agent | A saved set of instructions Claude Code can hand a job to, kept in a `.claude/agents` folder. |
@@ -150,7 +151,7 @@ Before this download went out, 3 people checked it: a stranger followed this gui
 
 The 3 checks were run again on the finished download, and an automatic check ran every action in Jeeves (send a message, stop an answer, open each panel) 5 times over. 10 more faults were found and fixed. Here are all 10:
 
-- **Naming the tools to switch off left 25 other tools still switched on.** Counted on 2026-09-22 against Claude Code 2.1.280. The block list named 7; Claude Code has added many since the list was written, among them tools that book a job for later, raise a notification, start a second Claude running in the background and message another agent. Chat is now given a list of what it MAY use, and nothing else: open a file, search inside files, find files by name. Proved against the real Claude Code, not only in a test: see "What Chat can and cannot do".
+- **Naming the tools to switch off left 25 other tools still switched on.** Counted on Ashley's own PC, not a Mac, on 2026-09-22 against Claude Code 2.1.280. The block list named 7; Claude Code has added many since the list was written, among them tools that book a job for later, raise a notification, start a second Claude running in the background and message another agent. Chat is now given a list of what it MAY use, and nothing else: open a file, search inside files, find files by name. Proved against the real Claude Code, not only in a test: see "What Chat can and cannot do".
 - **The model was named by a word that moved.** `opus` meant Claude Opus 5.5 from 2026-09-22, and the price table in FleetView (piece 2) had never heard of it, so your tokens would have shown as "price unknown". Every model is now written out in full.
 - **A popped-out Chat quietly erased a message.** Send a message from a popped-out Chat window, then send another from the main window, and the pop-out's message disappeared from the saved conversation: each window wrote its whole record over the other's. Each window now adds only its own new lines, and a message sent in either window appears in the other.
 - **Send looked lit while an answer was coming in.** It refused every press, and the only explanation sat in the top corner of the window, up to 921 pixels away from where you were typing. Send is now greyed out, and the reason is printed at the bottom of the conversation.
@@ -189,36 +190,44 @@ The 3 checks were run again on the finished download, and an automatic check ran
 
 ### Before you start on a Mac
 
-**Python.** Install Python from https://www.python.org/downloads/macos/ (the macOS installer; we tested 3.14.7). When it finishes, double-click **Install Certificates.command** and **Update Shell Profile.command** in the Python folder inside Applications, then open a new Terminal window. Check with `python3 -c "import sys; print(sys.prefix)"`: it must print a line starting `/Library/Frameworks/Python.framework`. If it starts `/opt/homebrew` or `/usr/local/Cellar`, your Terminal uses Homebrew's Python: every command here still works, and the self-checks below use a private Python folder, which works with either.
+**Python.** Install Python from https://www.python.org/downloads/macos/ (the link labelled "macOS installer"; we tested 3.14.7). When it finishes, double-click **Install Certificates.command** and **Update Shell Profile.command** in the Python folder inside Applications, then open a new Terminal window. Check with `python3 -c "import sys; print(sys.prefix)"`: it should print a line starting `/Library/Frameworks/Python.framework`. If it starts `/opt/homebrew` or `/usr/local/Cellar`, your Terminal uses Homebrew's Python (Homebrew is an add-on installer many Mac owners use). Every command here still works. The self-checks run from a private Python folder: a folder in your home folder with its own copy of Python's add-ons, which works with python.org's Python and with Homebrew's.
 
-**The first `git`.** Your Mac may show a box asking to install the command line developer tools. Press Install, wait until it has finished, then type the `git` line again (not tested on a real Mac).
+**Node.js.** Install the LTS version (long-term support: the version that gets security fixes the longest) from https://nodejs.org (we tested v24.21.0), open a new Terminal window, and check with `node --version`: `v22` or higher.
 
-**If Terminal says `claude` is not found,** type `echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc`, open a new Terminal window, and check with `claude --version`.
+**The first time you type `git`.** Your Mac may show a box asking to install the command line developer tools. Press Install, wait until it has finished, then type the `git` line again.
 
-**Your second brain** is at `~/Second Brain` on a Mac (a folder in your home folder), not in Documents, because macOS can refuse a program that starts by itself access to Documents (not tested on a real Mac). If a page says "macOS refused access to" a folder, move that folder into your home folder and run `python3 install.py` again (not tested on a real Mac).
+**If Terminal says `claude` is not found,** type the line below. It adds the folder Claude Code is installed in to the list of folders Terminal looks in for programs. Then open a new Terminal window and check with `claude --version`.
 
-**"Allow Python to find devices on local networks?"** If macOS asks this the first time the page opens, press Allow. This advice is not tested on a real Mac.
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+```
 
-**Apple Silicon or Intel:** the steps are the same on both, and both were tested.
+**Your second brain** is at `~/Second Brain` on a Mac, a folder in your home folder, not in Documents, because macOS can stop a program that starts by itself from opening your Documents folder. If a page says "macOS refused access to" a folder, move that folder into your home folder and run `python3 install.py` again.
+
+**"Allow Python to find devices on local networks?"** If macOS asks this the first time the page opens, press Allow.
+
+**Apple Silicon or Intel** (the 2 kinds of chip a Mac can have; the Apple menu, then About This Mac, shows yours): the steps are the same on both, and both were tested.
+
+**Tried only on test Macs** (Macs GitHub rents out by the minute to run scripts, not a person's own Mac): 3 of the steps above were never tried on a real Mac. They are the developer-tools box, macOS stopping a program from opening Documents, and the question about devices on local networks.
 
 ### What you need
 
 | You need | How to check |
 |---|---|
 | Python 3.11 or newer | In Terminal: `python3 --version`. The installer refuses anything older. Python 3.9 and everything before it no longer get security fixes, and 3.10 gets them only until 2026-10-31 (python.org, checked 2026-09-24). |
-| Claude Code, logged in | `claude --version` prints a number (2.1.280 on 2026-09-23), and typing `claude` opens it without asking you to log in |
+| Claude Code, logged in | `claude --version` prints a number (2.1.282 on a test Mac on 2026-09-25), and typing `claude` opens it without asking you to log in |
 | Git | `git --version` |
 | Your second brain | The folder from the second-brain sessions. Its path, for example `~/Second Brain` |
 | Your CRM (optional) | The folder from the CRM sessions. Without it, Today shows only your second brain |
-| ccusage (optional) | A free program that reads how much of your 5-hour Claude allowance you have used. Check with `ccusage --version`. Install Node.js from https://nodejs.org first, then type `npm install -g ccusage` (-g means it works from every folder). The version of ccusage we checked against on 2026-09-23 was 20.0.24 |
+| ccusage (optional) | A free program that reads how much of your 5-hour Claude allowance you have used. Install Node.js from https://nodejs.org first, then type `npm install -g --prefix ~/.local ccusage`. It puts ccusage in `~/.local/bin`, the folder Claude Code is installed in, so Jeeves finds it whether you start it or it starts by itself; no password is needed. Check with `ccusage --version` in a new Terminal window; if it says not found, type the Claude Code line from "Before you start on a Mac" first. Jeeves's installer prints the same line. The shorter `npm install -g ccusage` is refused on a Mac with "EACCES: permission denied" (both tried on a test Mac on 2026-09-25, which installed ccusage 20.0.24) |
 
-![The 3 checks in Terminal, as they printed on a test Mac on 2026-09-25. Any number at or above these is fine](img/mac-terminal-checks.png)
+![The 3 checks in Terminal, as they printed on 2026-09-25 on a test Mac (a Mac that GitHub rents out by the minute to run scripts, not a person's own Mac). Any number at or above these is fine](img/mac-terminal-checks.png)
 
 > **Tip:** Want to see Jeeves before pointing it at your real notes? After step 2 below, run `python3 tools/demo.py ../jeeves-demo --serve --port 4099`. This makes a practice folder called `jeeves-demo` next to the Jeeves folder, with a made-up bookkeeper's 2 vaults and 5 agents, and starts Jeeves on it. Open http://127.0.0.1:4099/ to see it. The chat answers from a script and costs 0 tokens. Press Ctrl+C in that terminal to stop it.
 
 ## Install it
 
-1. Open Terminal: press Command and the space bar together, type `Terminal`, press Enter. It opens in your home folder, which is where all 4 downloads in this set go.
+1. Open Terminal: press Command and the space bar together, type `Terminal`, press Return. It opens in your home folder, which is where all 4 downloads in this set go.
 2. Download the code (clone the repo: copy the project from GitHub, the site where it is stored) and go into its folder:
 
 ```
@@ -233,15 +242,15 @@ python3 install.py
 ```
 
 4. It checks Python and Claude Code first. If either is missing it says what to do and changes nothing.
-5. It asks 4 questions about folders and the port, then 1 more in step 6. Press Enter to accept the answer in brackets, which is what it found:
+5. It asks 4 questions about folders and the port, then 1 more in step 6. Press Return to accept the answer in brackets, which is what it found:
    - where your second brain is (if you used the installer from the second-brain sessions, it already knows the folder and offers it)
-   - where your CRM is (the same, from the CRM installer; leave it blank if you have none)
+   - where your CRM is (the same, from the CRM installer). With a CRM at `~/CRM`, the suggestion in brackets is that folder and Return keeps it. With no CRM, there is no suggestion and Return leaves the answer blank (both checked on a test Mac on 2026-09-25)
    - where your agents are (normally the `agents` folder inside `.claude` in your user folder, on a Mac `~/.claude/agents`)
    - which port to use: the number after the colon in the address, 4040 unless another program is using it. Type a number; anything else and it asks again.
-6. It asks whether Jeeves should start by itself, with no window, each time you log in to your Mac. Jeeves has no account of its own to log in to. The default is no. If you say yes, it writes a LaunchAgent: a small file, `ai.outliers.jeeves.plist`, in the folder `~/Library/LaunchAgents`, that tells your Mac to start Jeeves each time you log in. It takes effect from your next log-in. To switch it on now, the installer prints 1 line to type: `launchctl load` followed by that file's full path. Starting after a real restart is not tested on a real Mac.
+6. It asks whether Jeeves should start by itself, with no window, each time you switch on your Mac and sign in. Jeeves has no account of its own to sign in to. The default is no. If you say yes, it writes a LaunchAgent: a small file, `ai.outliers.jeeves.plist`, in the folder `~/Library/LaunchAgents`, that tells your Mac to start Jeeves each time you switch it on and sign in. It takes effect the next time you sign in. To start Jeeves now as well, use step 8.
 7. It writes `config.json` next to `install.py`, and if you change an answer it keeps your old settings as `config.json.bak-<date>`. When Jeeves runs it keeps its own working files (which conversation it is carrying on, which copy is running) in a folder called `state` here. Run the installer again with the same answers and it says "Nothing changed".
 
-![The installer on a test Mac, pressing Enter at each question. The home folder is made up (sam); yours will be your own. If another program is already using 4040, the installer says so and offers the next free number instead. The playwright line only matters if you want to retake this guide's pictures](img/mac-terminal-install.png)
+![The installer on a test Mac, pressing Return at each question. The home folder belongs to a made-up user called Sam (/Users/sam); yours will be your own. If another program is already using 4040, the installer says so and offers the next free number instead. The playwright line (Playwright is a free add-on that drives a web browser; this guide does not ask you to install it) only matters if you want to retake this guide's pictures](img/mac-terminal-install.png)
 
 ![Running the installer again with the same answers changes nothing](img/mac-terminal-install-again.png)
 
@@ -258,9 +267,9 @@ When it worked you see the orb top left, Chat on the left, Today in the middle a
 
 ![What you should see the first time on a laptop: the Laptop layout, with every panel still there as a tab](img/layout-laptop.png)
 
-> **Tip:** If you said yes to Jeeves starting by itself, it starts with no window each time you log in. It does not open your browser: go to http://127.0.0.1:4040/ yourself, and bookmark it. Stop it with `python3 start.py --stop`.
+> **Tip:** If you said yes to Jeeves starting by itself, it starts with no window each time you switch on your Mac and sign in. It does not open your browser: go to http://127.0.0.1:4040/ yourself, and bookmark it. Stop it with `python3 start.py --stop`.
 
-> **Tip:** Changed your mind about Jeeves starting by itself when you log in? `python3 install.py --uninstall` stops Jeeves and removes the LaunchAgent file. It leaves your settings and vaults alone. To remove Jeeves completely, then delete the `outliers-ws-04-jeeves-mac` folder as well.
+> **Tip:** Changed your mind about Jeeves starting by itself when you switch on your Mac and sign in? `python3 install.py --uninstall` stops Jeeves, switches the LaunchAgent off and removes its file. It leaves your settings and vaults alone. To remove Jeeves completely, then delete the `outliers-ws-04-jeeves-mac` folder as well.
 
 > **Warning:** Do not change the setting `"permission_mode"` (Claude Code's own rule for when it must ask you first) to `"bypassPermissions"` in config.json. Set to `"bypassPermissions"`, Claude never stops to ask. Switch `"allow_actions"` on as well and it can rewrite or delete any note in your vaults, and run any command on your computer, with nobody there to say no, from a browser tab that sits open all day.
 
@@ -278,7 +287,7 @@ Across everything reads the numbered table in `Today.md`: 1 row per person, with
 
 ![Today: the CRM page, then the day in the second brain](img/panel-today.png)
 
-**Chat.** Type and press Enter. Shift+Enter makes a new line. The lines starting with an arrow show which files Claude is reading. While Claude is working, a **Stop** button appears next to Send: press it to end the answer. A message typed while an answer is still coming in is not sent; wait, or press Stop first. A run that goes past 10 minutes is stopped for you (`"chat_timeout_seconds"` in `config.json`). **Suggestions** shows ready-made questions you can click.
+**Chat.** Type and press Return (the page calls it Enter). Shift+Return makes a new line. The lines starting with an arrow show which files Claude is reading. While Claude is working, a **Stop** button appears next to Send: press it to end the answer. A message typed while an answer is still coming in is not sent; wait, or press Stop first. A run that goes past 10 minutes is stopped for you (`"chat_timeout_seconds"` in `config.json`). **Suggestions** shows ready-made questions you can click.
 
 The model menu at the top picks which Claude model answers: `best` (`claude-opus-5-5`, the strongest), `deep` (`claude-sonnet-5`, the middle one) or `fast` (`claude-haiku-4-5`, the cheapest). You can change which model each name uses in `config.json`, and your choice is remembered in this browser.
 
@@ -302,9 +311,9 @@ The conversation stays on screen after a reload or a restart, and Claude Code ca
 
 Everything else Claude Code can normally do is absent: running commands, writing or editing a file, opening a web page, searching the web, booking a job to run later, messaging another agent, and anything else Claude Code adds in a future version. Jeeves also loads none of your add-on servers (MCP servers, which give Claude extra tools such as sending messages), and it writes the 7 tools that act (run commands, change files, reach the internet) into a settings file of its own, `state/read-only-settings.json`, as refused, because Claude Code's own documentation (read 2026-09-22) says a refusal written there also covers a second Claude that the first starts while answering you.
 
-This used to work the other way round, and it left 25 tools available. Jeeves named 7 tools to block. Measured on 2026-09-22 against Claude Code 2.1.280, that left **25** tools still available, including ones that book a run for later, raise a notification, start a second Claude running in the background and message another agent. A list of tools to block has to be edited every time Claude Code adds a new tool. A list of what is allowed never changes.
+This used to work the other way round, and it left 25 tools available. Jeeves named 7 tools to block. Measured on Ashley's own PC, not a Mac, on 2026-09-22 against Claude Code 2.1.280, that left **25** tools still available, including ones that book a run for later, raise a notification, start a second Claude running in the background and message another agent. A list of tools to block has to be edited every time Claude Code adds a new tool. A list of what is allowed never changes.
 
-Checked live on 2026-09-22, against the real Claude Code, in a folder with 1 note in it:
+Checked live on Ashley's own PC, not a Mac, on 2026-09-22, against the real Claude Code, in a folder with 1 note in it:
 
 | Asked | What happened |
 |---|---|
@@ -314,7 +323,7 @@ Checked live on 2026-09-22, against the real Claude Code, in a folder with 1 not
 
 To let Chat act, see "5. Let it edit notes, on your terms" under "Fit it to your own AI system".
 
-**Vaults.** Pick Second brain or CRM and type to filter by note name. Press Enter to search inside every note in both vaults. A link between notes (a name in double square brackets) anywhere opens the note in whichever vault has it, and the tab switches to match; if no vault has it, the panel says so and offers to search.
+**Vaults.** Pick Second brain or CRM and type to filter by note name. Press Return to search inside every note in both vaults. A link between notes (a name in double square brackets) anywhere opens the note in whichever vault has it, and the tab switches to match; if no vault has it, the panel says so and offers to search.
 
 ![Vaults: a note from the made-up second brain, table and checkboxes included. (TOP LEVEL) lists notes not in any folder, such as CLAUDE, your instruction file](img/panel-vaults.png)
 
@@ -336,9 +345,9 @@ The Tokens panel's 4 kinds: **Conversation re-read** (cache read) is Claude re-r
 
 **Work board and FleetView.** If ProjectForge or FleetView is running, it appears inside the panel, with an "open in its own tab" link. If not, the panel says so and gives you the link.
 
-On a Mac, for now, that download link goes to the version of ProjectForge or FleetView made for PCs (`outliers-ws-03-projectforge`, `outliers-ws-02-fleetview`), because Jeeves was written before the Mac versions existed. For a Mac, download `outliers-ws-03-projectforge-mac` and `outliers-ws-02-fleetview-mac` instead: pieces 3 and 2 of this set.
+On a Mac, that download link goes to the Mac version: `outliers-ws-03-projectforge-mac` or `outliers-ws-02-fleetview-mac`, pieces 3 and 2 of this set. If you installed Jeeves on this Mac before 2026-09-25, your settings keep the links it wrote then, to the versions made for PCs. Those run on a Mac too, but their guides print PC commands: download pieces 2 and 3 of this set instead.
 
-![The Work board panel when ProjectForge is not running: it says so, shows the address it checked (http://127.0.0.1:3020, ProjectForge's usual address) and gives the download link](img/panel-board.png)
+![The Work board panel on a test Mac when ProjectForge is not running: it says so, shows the address it checked (http://127.0.0.1:3020, ProjectForge's usual address) and gives the download link, which on a Mac is the Mac version](img/mac-panel-board.png)
 
 **Moving panels.** Drag a tab by its title to another edge or into another group. The square button on each panel opens it in its own window. That window's address ends in `?only=` and the panel name (for example `http://127.0.0.1:4040/?only=today`), so you can bookmark 1 panel on its own. **+ Panel** brings back anything you closed (open panels are marked "(open)", and each has its own pop-out button). **Reset layout** puts everything back. Close every panel and the page says so, with a button for each panel.
 
@@ -350,7 +359,7 @@ On a Mac, for now, that download link goes to the version of ProjectForge or Fle
 
 ![Today, made to fill the page by double-clicking its tab. Esc puts it back](img/maximised.png)
 
-**Stopping it.** Press Ctrl+C in the Terminal window where you typed `python3 start.py`. If it started another way (by itself when you logged in), open Terminal (it opens in your home folder), type `cd outliers-ws-04-jeeves-mac`, then `python3 start.py --stop`. It checks that the program on that port really is Jeeves before stopping it, so it never stops anything else.
+**Stopping it.** Press Ctrl+C in the Terminal window where you typed `python3 start.py`. If it started another way (by itself when you switched on your Mac and signed in), open Terminal (it opens in your home folder), type `cd outliers-ws-04-jeeves-mac`, then `python3 start.py --stop`. It checks that the program on that port really is Jeeves before stopping it, so it never stops anything else.
 
 ![Starting Jeeves when it is already running, on a test Mac. The number is the ID your Mac gives the running Jeeves; you do not need it](img/mac-terminal-already-running.png)
 
@@ -365,7 +374,7 @@ cd ../jeeves-trial
 python3 start.py
 ```
 
-The second line makes a folder called `jeeves-trial` next to `outliers-ws-04-jeeves-mac`, with your settings and a port of its own: 1 above your everyday Jeeves's port (4041 if yours is 4040), or the next number nothing else is using. It prints the copy's address, for example http://127.0.0.1:4041/, and your everyday Jeeves stays at http://127.0.0.1:4040/. The copy reads the same 2 note folders as your everyday Jeeves, starts a fresh chat conversation, and leaves alone the LaunchAgent that starts your everyday Jeeves when you log in. Do not copy the folder by hand instead: a copy made by hand keeps 4040 and the everyday Jeeves's record of which program is running, so it will not start while your everyday Jeeves runs, and `python3 start.py --stop` typed in it stops your everyday Jeeves.
+The second line makes a folder called `jeeves-trial` next to `outliers-ws-04-jeeves-mac`, with your settings and a port of its own: 1 above your everyday Jeeves's port (4041 if yours is 4040), or the next number nothing else is using. It prints the copy's address, for example http://127.0.0.1:4041/, and your everyday Jeeves stays at http://127.0.0.1:4040/. The copy reads the same 2 note folders as your everyday Jeeves, starts a fresh chat conversation, and leaves alone the LaunchAgent that starts your everyday Jeeves when you switch on your Mac and sign in. Do not copy the folder by hand instead: a copy made by hand keeps 4040 and the everyday Jeeves's record of which program is running, so it will not start while your everyday Jeeves runs, and `python3 start.py --stop` typed in it stops your everyday Jeeves.
 
 Before your first change, check the copy. Once, first, make a private Python folder for the checks and put pytest (a Python checking program) in it. Type these 2 lines:
 
@@ -418,7 +427,7 @@ CRM note" into the chat box without sending it. Keep it read-only. Add a test.
 ```
 In Jeeves, add a row of buttons to the top bar for the agents listed in a new
 config.json key "agent_buttons" (a list of names). Each button fills the chat box with
-"Use the <name> agent to " and focuses it. Nothing is sent until I press Enter.
+"Use the <name> agent to " and focuses it. Nothing is sent until I press Return.
 ```
 
 **4. Your own ready-made layouts.** The Layouts menu already saves layouts in your browser. To ship your own to every browser (LAYOUTS is the list of ready-made layouts inside `app.js`):
@@ -485,10 +494,10 @@ changed.
 | `python3 install.py` | Asks 4 questions about folders and the port, and 1 about starting by itself, then writes `config.json`. Safe to run again. |
 | `python3 install.py --port 4041` | The same, with a different port. |
 | `python3 install.py --vault <folder> --crm <folder> --agents <folder>` | Gives the answers up front instead of asking. |
-| `python3 install.py --launcher --yes` | Also makes Jeeves start by itself, with no window, each time you log in (a LaunchAgent), and asks nothing else. |
+| `python3 install.py --launcher --yes` | Also makes Jeeves start by itself, with no window, each time you switch on your Mac and sign in (a LaunchAgent), and asks nothing else. |
 | `python3 install.py --copy ../jeeves-trial` | Makes a second copy to experiment on, next to this folder, with its own port. See "The safe way". |
 | `python3 install.py --yes` | Accepts every answer it found, asks nothing. |
-| `python3 install.py --uninstall` | Stops Jeeves and removes the LaunchAgent that starts it by itself when you log in. Leaves settings and vaults alone. In a copy, it leaves the everyday Jeeves's LaunchAgent alone. |
+| `python3 install.py --uninstall` | Stops Jeeves, switches off the LaunchAgent that starts it by itself when you switch on your Mac and sign in, and removes its file. Leaves settings and vaults alone. In a copy, it leaves the everyday Jeeves's LaunchAgent alone. |
 | `python3 start.py` | Starts Jeeves and opens your browser. Ctrl+C stops it. |
 | `python3 start.py --no-open` | Starts without opening a browser (the LaunchAgent uses this). |
 | `python3 start.py --port 4041` | Starts on another port this time only. |
@@ -528,7 +537,7 @@ changed.
 |---|---|
 | `config.json` | Every install that changes an answer. |
 | `config.json.bak-<date>` | Your old settings, when an answer changed. |
-| `ai.outliers.jeeves.plist` in `~/Library/LaunchAgents` | Only if you said yes to Jeeves starting by itself when you log in. |
+| `ai.outliers.jeeves.plist` in `~/Library/LaunchAgents` | Only if you said yes to Jeeves starting by itself when you switch on your Mac and sign in. |
 | `state/chat-sessions.json` | The reference number Claude Code gives a conversation, so Chat can carry the same one on after you restart. |
 | `state/jeeves.pid` | The process number (the ID your Mac gives the running Jeeves program) and its port, so `--stop` finds it. |
 | `state/read-only-settings.json` | The 7 tools that act (run commands, change files, reach the internet), written down as refused. Chat's own 3-tool limit is given on the command line; this file is what a second Claude that Chat starts to help with your question has to obey too. |
@@ -539,7 +548,7 @@ changed.
 
 | What you see | Why | What to do |
 |---|---|---|
-| "Jeeves is already running" when you start it | It is: perhaps it started by itself when you logged in. | Open http://127.0.0.1:4040/ . To restart it: `python3 start.py --stop`, then `python3 start.py`. |
+| "Jeeves is already running" when you start it | It is: perhaps it started by itself when you switched on your Mac and signed in. | Open http://127.0.0.1:4040/ . To restart it: `python3 start.py --stop`, then `python3 start.py`. |
 | "Claude Code is not logged in", or "No conversation found" | Claude Code needs a login, or the conversation Jeeves was carrying on has been deleted from Claude Code's logs. | Type `claude` in a terminal and log in. Then press **Try again** under the message. |
 | Chat says Claude Code was not found | Jeeves looks for the `claude` program on your PATH (the list of folders Terminal searches for programs) and in `~/.local/bin`, and found it in neither, or Jeeves was started from a Terminal window that was open before you installed it. | Close every Terminal window, open a new one, check `claude --version`, then restart Jeeves. If it still cannot find it, put the full path in `config.json` as `"claude_command"`. |
 | Chat says it cannot run a command, edit a file or look online | By design: Chat is read-only unless you allow more. | See "5. Let it edit notes, on your terms" above. |
@@ -553,14 +562,14 @@ changed.
 | "Could not listen on port 4040" | Another program is using the port. | The message names a port that is free right now: run the line it prints, for example `python3 start.py --port 4041`. To keep the new port, run `python3 install.py --port 4041`. |
 | "config.json could not be read", with a line number | You edited `config.json` and left a mistake in it the computer cannot read past: usually a comma after the last setting, or a missing bracket or quotation mark. | Open the file, look at the line the message names, and correct it. Or run `python3 install.py` to write a fresh one; your vault folders are asked for again, nothing else is lost. |
 | "Your second brain folder is not there" | The folder named in `config.json` does not exist: a typo, a renamed folder, or a drive that is not plugged in. | Check `"second_brain"` in `config.json`, or plug the drive back in, then refresh the page. The same message appears for `"crm_vault"`. |
-| "macOS refused access to" and a folder | macOS stopped Jeeves reading that folder. It can happen to a folder in Documents when Jeeves started by itself at log-in (not tested on a real Mac). | Move the folder into your home folder: the message names the place, the folder's own name in your home folder. Then run `python3 install.py` again and give the new place. |
+| "macOS refused access to" and a folder | macOS stopped Jeeves reading that folder. It can happen to a folder in Documents when Jeeves started by itself after you switched on your Mac and signed in; the test Macs never showed it. | Move the folder into your home folder, keeping its name: for example `~/Documents/Second Brain` becomes `~/Second Brain`. The message names the new place. Then run `python3 install.py` again and type that place when it asks. |
 | It will not start at all | A file Jeeves needs is missing, or a setting in `config.json` is wrong. This rebuild needs nothing outside its own folder except your vaults. | Run `python3 install.py` again: it checks everything and says what is missing. |
 
 What 4 of these look like on screen: a failed chat message, a brand-new setup with empty panels, Chat with no Claude Code installed, and a folder that is not there.
 
 ![A failed message says what went wrong in plain words, with Try again](img/chat-failed.png)
 
-![A brand-new setup on a test Mac: each empty panel says what is missing and how to fix it](img/mac-new-member.png)
+![A brand-new setup on a test Mac: each empty panel says what is missing and how to fix it.. A CRM from the first CRM session has no Today list yet: the Today panel says it comes in part 7 of the CRM sessions. Until then Today stays empty and nothing is broken](img/mac-new-member.png)
 
 ![Chat with no Claude Code installed: the address is a link, the text box says it is switched off, and the suggested questions are put away](img/no-claude.png)
 

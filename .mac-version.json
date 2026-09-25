@@ -1,10 +1,10 @@
 {
   "main": "outliers-ws-04-jeeves",
-  "main_commit": "ff560a0c7bd08de839b8d3c1d9c378b66457068e",
+  "main_commit": "384fad6746066c8fde05777813ee399532d7fc9f",
   "mac": "outliers-ws-04-jeeves-mac",
   "macgen_commit": "9c2578fc+uncommitted",
   "date": "2026-09-25",
-  "fingerprint": "2a94ca5c4224c3b1cc0c5c45af64aa4605717d861b86cb0791448be36d23f496",
+  "fingerprint": "2421607f37911b9bd263ce7201a4dfdeb426395b056e43fc37670722606a6da1",
   "left_out_of_fingerprint": [
     ".mac-version.json",
     "guide/Jeeves A Personal-Assistant Cockpit Over Your Own Second Brain (Mac).pdf",
@@ -24,7 +24,7 @@
     {
       "path": "README.md",
       "category": "changed",
-      "sha256": "50e4a98bdb2e76b60ea9b04099397ce6eb6ecfcefade5f15ba9b6cc3cd317fe3"
+      "sha256": "bd72d79b2579c14b74223876bf564cc4b1647da6752772aa452e67fbb23a4bdf"
     },
     {
       "path": "WHAT-I-STOLE.md",
@@ -39,7 +39,7 @@
     {
       "path": "guide/GUIDE.md",
       "category": "changed",
-      "sha256": "52a22052dc72e7aba01600591c573489334a3834d83d1bd87c981acb4f9a8583"
+      "sha256": "34a7d46188425b4bfc149e6f502faff5b0249dbbb4d84080900aa1f39f91d6ee"
     },
     {
       "path": "guide/Jeeves A Personal-Assistant Cockpit Over Your Own Second Brain (Mac).pdf",
@@ -128,22 +128,27 @@
     {
       "path": "guide/img/mac-diagram-files.png",
       "category": "changed",
-      "sha256": "7d1ec54f5348bbc02197498bd9d20e3f93dc906720dc6f29970660a5afc6ba8c"
+      "sha256": "9348781ae4f505ec562cee418f6fc86d1b5e8609d88321a27f0688b5685e4365"
     },
     {
       "path": "guide/img/mac-folder-missing.png",
       "category": "changed",
-      "sha256": "4d9e835f9942f4af2174f208686d3b3fa03aef9a1d4ca007dc0b74d41c7abe82"
+      "sha256": "dce4ba0a6b9246c8d999936a808f25c5e87705332238570204ce9b4a5b7f3f4e"
     },
     {
       "path": "guide/img/mac-new-member.png",
       "category": "changed",
-      "sha256": "c335e134df8af85d6b8939808bcade69738aa6452c6fab5a74670ded9a9ba44b"
+      "sha256": "24913b2327c5d997c3b936584d550006952773e4226b216a863478d9b37cda05"
     },
     {
       "path": "guide/img/mac-original-first-build-2026-06-13.png",
       "category": "changed",
       "sha256": "5eaba8adc407ebcfa9ab907a18abf36f29abe930b538144cfa695023d1f400d1"
+    },
+    {
+      "path": "guide/img/mac-panel-board.png",
+      "category": "changed",
+      "sha256": "3d871785b1f67d0c51abbda3c16da8a1d612e312c53f7c6e5350791e37ee2e3d"
     },
     {
       "path": "guide/img/mac-terminal-already-running.png",
@@ -158,12 +163,12 @@
     {
       "path": "guide/img/mac-terminal-install-again.png",
       "category": "changed",
-      "sha256": "d824cab998c4b0c56a94807a3dab9f882a33424a41c124fb48ddde2ea51d6244"
+      "sha256": "292d41da97483fa3143b3c9b633e1174ae68398bdaad2fa6225f573699e744cb"
     },
     {
       "path": "guide/img/mac-terminal-install.png",
       "category": "changed",
-      "sha256": "e1a6711b46befae71538c52ddbc8618b8d9381adb98e0449c4311498a7788be3"
+      "sha256": "77dc1a217053ea22c29331c09109feda99a231ef8b704b3517839ee11fc906c8"
     },
     {
       "path": "guide/img/maximised.png",
@@ -272,7 +277,7 @@
     {
       "path": "install.py",
       "category": "same",
-      "sha256": "eec5b15c3d696a66551cfcdef85baf114e0535faf47f8b9cae98c6855743e43f"
+      "sha256": "dd0a8258ca24f90db162a2f37b333f4f82efbf00f4091a503f4e121a76af3dd6"
     },
     {
       "path": "jeeves/__init__.py",
@@ -297,7 +302,7 @@
     {
       "path": "jeeves/config.py",
       "category": "same",
-      "sha256": "6079315eba0bc1652d0bcd379338c150bfb0f82adca45c738c44a76a09aa5825"
+      "sha256": "bd3c66fe66290bf5ef2119e56ed4011b19cd607ee0f2c9733ae36290ade0f35a"
     },
     {
       "path": "jeeves/proc.py",
@@ -312,7 +317,7 @@
     {
       "path": "jeeves/sessions.py",
       "category": "same",
-      "sha256": "2d0db19aed11f5ea747536f6e10b620253d8a6b9b3f73437e1207d0cb16693e3"
+      "sha256": "deaa5c2b90fc0ca87cc1f581407da443797644f007d8bc4634fa3a7ebaaa6b6f"
     },
     {
       "path": "jeeves/static/app.css",
@@ -322,7 +327,7 @@
     {
       "path": "jeeves/static/app.js",
       "category": "same",
-      "sha256": "a2c987cb111789e1791f5481092935a17f9e1764b9a2a14ad8c2fccd3a7aa074"
+      "sha256": "b87c7e593b7bd0e4800571a41ae40e1dc3e680d1155b3feb39755079643aeef3"
     },
     {
       "path": "jeeves/static/index.html",
@@ -352,7 +357,7 @@
     {
       "path": "jeeves/vaults.py",
       "category": "same",
-      "sha256": "bfd8722f2152f3b347572ec9f63c9d51c2d5f7e8c6c2c0c887f5ba6ecdb5973b"
+      "sha256": "fab21d12ad82f78feb0991f13a46add085c349e35f52abde8c47fcc5636af067"
     },
     {
       "path": "start.py",
@@ -370,9 +375,24 @@
       "sha256": "1d3e223f94be0be496a6a4f11d3b3949939765aa624ae640eb93e37ea4a521fa"
     },
     {
+      "path": "tests/mac/mac_ccusage_advice.py",
+      "category": "same",
+      "sha256": "72bbb458a53ba1a010db761795079946c32042d605e71416ea1f7690c4d42f30"
+    },
+    {
+      "path": "tests/mac/mac_demo_links.py",
+      "category": "same",
+      "sha256": "9fb2ac5accc0c514508d3e5b9666d898f65c16434bed5875bdafab6c574229e2"
+    },
+    {
       "path": "tests/mac/mac_finds_claude_in_local_bin.py",
       "category": "same",
       "sha256": "3bcd42a0796b184a423dbec38719d933afcd0b4def53a648b3eb538b51d5194c"
+    },
+    {
+      "path": "tests/mac/mac_no_pip_install_sentence.py",
+      "category": "same",
+      "sha256": "1e66fdfaca628b12c56a27097ed89fa259d90b6ccf222d9ac7b784669c9915a8"
     },
     {
       "path": "tests/mac/mac_printed_commands_python3.py",
@@ -382,12 +402,17 @@
     {
       "path": "tests/mac/mac_repo_setting.py",
       "category": "same",
-      "sha256": "d92de97829d790f4a8aa8c4c0c31cf507f20f03d22467ef41ace5dae5255ba93"
+      "sha256": "ce573be7b681267ef8694f02f8e66cabbd6d65f7f2bd4e8412333f8a183ccd26"
     },
     {
       "path": "tests/mac/mac_server_starts_quickly.py",
       "category": "same",
       "sha256": "0d65721a7ac180c40c1c5644604719b4c94440d4950ffbc7462b0ae4620f2449"
+    },
+    {
+      "path": "tests/mac/mac_signin_wording.py",
+      "category": "same",
+      "sha256": "5924e3c25413fa25513fcb780a2da9f58a3a474bd67f4ae82e9d77ccb0081c43"
     },
     {
       "path": "tests/mac/mac_stop_spares_caller.py",
@@ -397,7 +422,17 @@
     {
       "path": "tests/mac/mac_today_names_python3.py",
       "category": "same",
-      "sha256": "66588481064c655037f56ef667cfba9cf196e0a3fea03f72677a2dec95f4fa39"
+      "sha256": "5cfd79c78bc229afb7bddbc6cfbb652259ee755c3c8e6637940442ae5fc0bb10"
+    },
+    {
+      "path": "tests/mac/mac_today_without_tool.py",
+      "category": "same",
+      "sha256": "9b16cebdcdbea3af54c8cde8e34661d4c27dbfb77a71b71ffb6802ac3ee79f18"
+    },
+    {
+      "path": "tests/mac/mac_uninstall_unloads_launchagent.py",
+      "category": "same",
+      "sha256": "90d6a6b523f837e76c0add7242efb5b46fafcf0a1988d5ae2e06a7fa29ac702d"
     },
     {
       "path": "tests/mac/mac_vault_lookup.py",
@@ -432,7 +467,7 @@
     {
       "path": "tests/test_server.py",
       "category": "same",
-      "sha256": "905615fde456c3c87d3911788a46dc0a01c93d0b7d4688ea4c1af5a2400c7cbe"
+      "sha256": "f193578d8dd6eef89663c325f75d1d19689eac14d44113c27a1bbbc44ecf8472"
     },
     {
       "path": "tests/test_ui.py",
@@ -442,7 +477,7 @@
     {
       "path": "tools/demo.py",
       "category": "same",
-      "sha256": "ef6d148e80f6d963ab96d9f57ac08d1265ebbf47986c61017d7e76f2deae8976"
+      "sha256": "32f589a8589554a4f3223d4e40742817f5709bd528e61443321ccbc81573e248"
     },
     {
       "path": "tools/fake_claude.py",

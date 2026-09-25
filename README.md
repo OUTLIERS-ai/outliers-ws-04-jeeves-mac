@@ -116,4 +116,4 @@ starts, if one was made. Then delete this folder.
 The full guide, with pictures and the story of how the original was built, is
 in `guide/GUIDE.md`.
 
-This repo is made automatically from outliers-ws-04-jeeves@ff560a0. To report a problem or suggest a change, use that repo, not this one.
+This repo is made automatically from outliers-ws-04-jeeves@384fad6. To report a problem or suggest a change, use that repo, not this one.
