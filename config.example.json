@@ -1,0 +1,22 @@
+{
+  "name": "Jeeves",
+  "port": 4040,
+  "second_brain": "C:/path/to/your/Second Brain",
+  "crm_vault": "C:/path/to/your/CRM",
+  "agents_dirs": ["C:/path/to/your/.claude/agents"],
+  "claude_home": "",
+  "claude_command": "claude",
+  "models": {"best": "claude-opus-5-5", "deep": "claude-sonnet-5", "fast": "claude-haiku-4-5"},
+  "default_model": "best",
+  "permission_mode": "dontAsk",
+  "allow_actions": false,
+  "chat_timeout_seconds": 600,
+  "inbox_file": "",
+  "daily_note_folders": ["Daily", "Daily Notes", "Journal", "Diary", "Calendar"],
+  "apps": {
+    "projectforge": {"url": "http://127.0.0.1:3020", "repo": "https://github.com/OUTLIERS-ai/outliers-ws-03-projectforge"},
+    "fleetview": {"url": "http://127.0.0.1:3010", "repo": "https://github.com/OUTLIERS-ai/outliers-ws-02-fleetview"}
+  },
+  "ccusage": "auto",
+  "orb": {"inner": "At your service", "outer": "Your second brain is listening"}
+}

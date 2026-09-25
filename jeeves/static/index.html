@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeeves</title>
+<link rel="stylesheet" href="/static/vendor/dockview/dockview.css">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand">
+    <div class="orb-mini"><svg id="orb-top"></svg></div>
+    <div>
+      <div class="name" id="brand-name">Jeeves</div>
+      <div class="status" id="status-line">Ready.</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="today-date" id="today-date"></div>
+  <label class="model">Model
+    <select id="model" title="best = Opus, the strongest and slowest; deep = Sonnet, the middle one; fast = Haiku, the quickest and cheapest"></select>
+  </label>
+  <div class="menu-wrap">
+    <button id="layout-btn" class="btn ghost" title="Ready-made arrangements of all 10 panels, and your own saved ones">Layouts ▾</button>
+    <div id="layout-menu" class="menu wide"></div>
+  </div>
+  <div class="menu-wrap">
+    <button id="add-btn" class="btn">+ Panel</button>
+    <div id="add-menu" class="menu"></div>
+  </div>
+  <button id="reset-btn" class="btn ghost" title="Put every panel back where it started">Reset layout</button>
+</header>
+<main id="dock" class="dockview-theme-abyss"></main>
+<script src="/static/orb.js"></script>
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

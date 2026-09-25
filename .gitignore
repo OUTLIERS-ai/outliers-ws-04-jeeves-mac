@@ -1,0 +1,12 @@
+# your own settings and Jeeves's working files never go into git
+config.json
+config.json.bak-*
+state/
+Start Jeeves (hidden).vbs
+*.tmp
+__pycache__/
+.pytest_cache/
+
+# the built guide (the series builder makes these)
+guide/*.pdf
+guide/*.html

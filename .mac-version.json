@@ -1,0 +1,458 @@
+{
+  "main": "outliers-ws-04-jeeves",
+  "main_commit": "ff560a0c7bd08de839b8d3c1d9c378b66457068e",
+  "mac": "outliers-ws-04-jeeves-mac",
+  "macgen_commit": "9c2578fc+uncommitted",
+  "date": "2026-09-25",
+  "fingerprint": "2a94ca5c4224c3b1cc0c5c45af64aa4605717d861b86cb0791448be36d23f496",
+  "left_out_of_fingerprint": [
+    ".mac-version.json",
+    "guide/Jeeves A Personal-Assistant Cockpit Over Your Own Second Brain (Mac).pdf",
+    "guide/jeeves-a-personal-assistant-cockpit-over-your-own-second-brain.html"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "category": "same",
+      "sha256": "b3ec9fec358067697ebc7651e67f75a2a32f9565ef3cb37549f856c5418d57d9"
+    },
+    {
+      "path": "LICENSE",
+      "category": "same",
+      "sha256": "20080b3c518761af49436b4c4c3cf83fee2967025a5404434a9f1c1df154d198"
+    },
+    {
+      "path": "README.md",
+      "category": "changed",
+      "sha256": "50e4a98bdb2e76b60ea9b04099397ce6eb6ecfcefade5f15ba9b6cc3cd317fe3"
+    },
+    {
+      "path": "WHAT-I-STOLE.md",
+      "category": "same",
+      "sha256": "0ecbf56b7d6e908e0a908d296d0874cc65803bc13964885feb7a51e06bea5b32"
+    },
+    {
+      "path": "config.example.json",
+      "category": "same",
+      "sha256": "74a36fc5fd3919d23563d73bc97210438111d0ece9bc2532142ee4b08d33d613"
+    },
+    {
+      "path": "guide/GUIDE.md",
+      "category": "changed",
+      "sha256": "52a22052dc72e7aba01600591c573489334a3834d83d1bd87c981acb4f9a8583"
+    },
+    {
+      "path": "guide/Jeeves A Personal-Assistant Cockpit Over Your Own Second Brain (Mac).pdf",
+      "category": "left out of the fingerprint"
+    },
+    {
+      "path": "guide/img/all-closed.png",
+      "category": "same",
+      "sha256": "e5336d866997de5880321877f85453df7d9efcb5bf0c999a4b77499e414ff23e"
+    },
+    {
+      "path": "guide/img/chat-answering.png",
+      "category": "same",
+      "sha256": "1683b1440f8b8fb93add92a6402f2efe33485d2565195a74369dbaa1cc663928"
+    },
+    {
+      "path": "guide/img/chat-failed.png",
+      "category": "same",
+      "sha256": "1d2c9f3ff9a8867972afe18c791ac6e0465fce55c30a376a84eb4f1b803c47bb"
+    },
+    {
+      "path": "guide/img/chat-stopped.png",
+      "category": "same",
+      "sha256": "3cbab5ca829c9ec858f8543104249f5ecd1f31f9e450d4c0a458f50bd3ac58fd"
+    },
+    {
+      "path": "guide/img/cockpit-chat.png",
+      "category": "same",
+      "sha256": "a2ceb24b276ac3b020f48254d838d3c4b0d3e67d16e91846e8edd6e9845578df"
+    },
+    {
+      "path": "guide/img/cockpit-start.png",
+      "category": "same",
+      "sha256": "aeff92d14523478280a58e968aaef111f10ff3dcaaab65e885bd41bf283cfb7c"
+    },
+    {
+      "path": "guide/img/cockpit-tour.png",
+      "category": "same",
+      "sha256": "c7448a17a9ba2215bbad1813408db6bbc9d1fa4a92b4c410fc9b01664fd5b57f"
+    },
+    {
+      "path": "guide/img/diagram-cost.png",
+      "category": "same",
+      "sha256": "aa6ed0ce99f02332cd519b43e40c0c60d0afbb03c8ef285240b4a8fb57c6c5e4"
+    },
+    {
+      "path": "guide/img/diagram-download.png",
+      "category": "same",
+      "sha256": "e98440acdc46d63ba5faad97435f26a7ef45a35a3d57ca97938ba505cc055e60"
+    },
+    {
+      "path": "guide/img/diagram-files.png",
+      "category": "same",
+      "sha256": "5dbf07c65af5c795c26700a210cfbb39ca1f03779bee4d6cc00d8d224b486a0b"
+    },
+    {
+      "path": "guide/img/diagram-fit.png",
+      "category": "same",
+      "sha256": "ab9edad540aff582bc9b7a6a647cd6d00e0396db294c27272b2b6fb23f706953"
+    },
+    {
+      "path": "guide/img/diagram-timeline.png",
+      "category": "same",
+      "sha256": "011f8f1e4bae540ca3db6b70660a2aa3b08c3c535b2cf2cce8d00bf77f947886"
+    },
+    {
+      "path": "guide/img/diagram-why.png",
+      "category": "same",
+      "sha256": "b2575bfc6c3fb52e185e28daa6d02a517b5b5a0eaefee4f86d2ce569b6cb2b48"
+    },
+    {
+      "path": "guide/img/folder-missing.png",
+      "category": "same",
+      "sha256": "e75207e8d5a95e2f00984b49582e40c26e5f116a9b73255148f6736b4734c481"
+    },
+    {
+      "path": "guide/img/layout-laptop.png",
+      "category": "same",
+      "sha256": "1ec25dac34265e44c335b6f6d627e387dbf3c5e408fe41c3ac2b4b363312c8b0"
+    },
+    {
+      "path": "guide/img/layouts-menu.png",
+      "category": "same",
+      "sha256": "79288a3301cee29a06e1aa6a564938331534aa75b58cfef23c6a622344953903"
+    },
+    {
+      "path": "guide/img/mac-diagram-files.png",
+      "category": "changed",
+      "sha256": "7d1ec54f5348bbc02197498bd9d20e3f93dc906720dc6f29970660a5afc6ba8c"
+    },
+    {
+      "path": "guide/img/mac-folder-missing.png",
+      "category": "changed",
+      "sha256": "4d9e835f9942f4af2174f208686d3b3fa03aef9a1d4ca007dc0b74d41c7abe82"
+    },
+    {
+      "path": "guide/img/mac-new-member.png",
+      "category": "changed",
+      "sha256": "c335e134df8af85d6b8939808bcade69738aa6452c6fab5a74670ded9a9ba44b"
+    },
+    {
+      "path": "guide/img/mac-original-first-build-2026-06-13.png",
+      "category": "changed",
+      "sha256": "5eaba8adc407ebcfa9ab907a18abf36f29abe930b538144cfa695023d1f400d1"
+    },
+    {
+      "path": "guide/img/mac-terminal-already-running.png",
+      "category": "changed",
+      "sha256": "98c9493950458752085b2832b01f8c442f4775bb1b3b0c5e39106f502cb507b6"
+    },
+    {
+      "path": "guide/img/mac-terminal-checks.png",
+      "category": "changed",
+      "sha256": "31147dc8ba6ce8e4e11ac6a108cf401492aa792ef67a65ef6495c599e528ea43"
+    },
+    {
+      "path": "guide/img/mac-terminal-install-again.png",
+      "category": "changed",
+      "sha256": "d824cab998c4b0c56a94807a3dab9f882a33424a41c124fb48ddde2ea51d6244"
+    },
+    {
+      "path": "guide/img/mac-terminal-install.png",
+      "category": "changed",
+      "sha256": "e1a6711b46befae71538c52ddbc8618b8d9381adb98e0449c4311498a7788be3"
+    },
+    {
+      "path": "guide/img/maximised.png",
+      "category": "same",
+      "sha256": "9a9972ce1f8933324dbc51d3df867dc70ad18b7322800e75a8baee306012a4d1"
+    },
+    {
+      "path": "guide/img/new-member.png",
+      "category": "same",
+      "sha256": "c49d6144906508929bbe2c9981322424f0e0940974de5b7fd090ad15f3f8bd45"
+    },
+    {
+      "path": "guide/img/no-claude.png",
+      "category": "same",
+      "sha256": "900badbf45760c2a6fe33d7509b28df55a611be8d0a2d14c2e3f67a737905962"
+    },
+    {
+      "path": "guide/img/orb.png",
+      "category": "same",
+      "sha256": "85a2ba195fb1027dff99d816c7f13cace67b4cf7697411bccc2c37484f32b2e8"
+    },
+    {
+      "path": "guide/img/original-3-column-2026-06-21.png",
+      "category": "same",
+      "sha256": "6c55f214004ff29f487af3b285254db1aca3402379a33675d327e4a6dd6b0bea"
+    },
+    {
+      "path": "guide/img/original-first-build-2026-06-13.png",
+      "category": "same",
+      "sha256": "725b508702d5763bac9341236c6a061c836c53c0c33016cf59c2558003467a02"
+    },
+    {
+      "path": "guide/img/original-full-cockpit-2026-06-21.png",
+      "category": "same",
+      "sha256": "77d6b4025a2abc2156b9dc9c19d117852165512b72fd6f0c8a29d7239fe7cd6d"
+    },
+    {
+      "path": "guide/img/original-orb-2026-06-21.png",
+      "category": "same",
+      "sha256": "acf65c5530083216983959bcb8cc3351a93ba0cea04bf5ba7bef31421b05c79d"
+    },
+    {
+      "path": "guide/img/panel-activity.png",
+      "category": "same",
+      "sha256": "54960a05050af26a330a49c303a85c5a585254c69fbe1b14596f5136ae7bf379"
+    },
+    {
+      "path": "guide/img/panel-agents.png",
+      "category": "same",
+      "sha256": "3f11e420db2b95d12a687ae5026b9124464b79be18a6d34fedc4d15c739a3532"
+    },
+    {
+      "path": "guide/img/panel-board.png",
+      "category": "same",
+      "sha256": "0ab5dde3337ced1ce4e543afaa6a9868aed1912cdba17d6ed171f8ce40cdf84f"
+    },
+    {
+      "path": "guide/img/panel-inbox.png",
+      "category": "same",
+      "sha256": "5804f0c16cd8beeca3ebd063e4deaccc6498f735e280d14feb8bb901f7264b0b"
+    },
+    {
+      "path": "guide/img/panel-overview.png",
+      "category": "same",
+      "sha256": "e1cfe6e877189be9d09675c61b6a248d927575c5e925aa2a97473dec82bc6baa"
+    },
+    {
+      "path": "guide/img/panel-today.png",
+      "category": "same",
+      "sha256": "df27e200657f011bbd15b713d281e89593b3bd22f4f281c5d3456e456872d4ea"
+    },
+    {
+      "path": "guide/img/panel-tokens.png",
+      "category": "same",
+      "sha256": "27e1a24a2e5f79dfa54bc915f8323e503d9ea2c2d7c07f84bd5128def435a902"
+    },
+    {
+      "path": "guide/img/panel-vaults.png",
+      "category": "same",
+      "sha256": "1ff0ad86fe0a8a925088ab47389d2fb54b3c03a5dc6d15407906d5f2d71de613"
+    },
+    {
+      "path": "guide/img/terminal-already-running.png",
+      "category": "same",
+      "sha256": "129333f7f83c411f3a9b48668885aae4f8e5d6f850e9513255a9ad1992289629"
+    },
+    {
+      "path": "guide/img/terminal-checks.png",
+      "category": "same",
+      "sha256": "6245bfa5adc2488c44707cda281fa460d907bd4c78ef074d31138daa5d3ea3fb"
+    },
+    {
+      "path": "guide/img/terminal-install-again.png",
+      "category": "same",
+      "sha256": "ad5ee352a8770ad1a02334592c1677b70d5cd81ea19334cf9b4b6b73e6fb2622"
+    },
+    {
+      "path": "guide/img/terminal-install.png",
+      "category": "same",
+      "sha256": "ea6ae410a86e228af380e17448554ba0385a259d7775b6d05c1fcfddfa8e80ad"
+    },
+    {
+      "path": "guide/jeeves-a-personal-assistant-cockpit-over-your-own-second-brain.html",
+      "category": "left out of the fingerprint"
+    },
+    {
+      "path": "install.py",
+      "category": "same",
+      "sha256": "eec5b15c3d696a66551cfcdef85baf114e0535faf47f8b9cae98c6855743e43f"
+    },
+    {
+      "path": "jeeves/__init__.py",
+      "category": "same",
+      "sha256": "e2a5191389b90a83e50ca07880d0898c2d2ca4c828688d0e6ac9ba9c0fcb5dd4"
+    },
+    {
+      "path": "jeeves/agents.py",
+      "category": "same",
+      "sha256": "c2d19f9d63fbc457627927df7488ca1dd87684e06c7059e8d8e86d8eaa5aaa98"
+    },
+    {
+      "path": "jeeves/apps.py",
+      "category": "same",
+      "sha256": "68dfcbb3c640678207bd8cdef8af286e9f39e511d2a5e8ed5ebfb974bb2448a9"
+    },
+    {
+      "path": "jeeves/chat.py",
+      "category": "same",
+      "sha256": "e9970238ead2479ff1ddc357ec5261f4f5f1d809d89ca94625814b6259dbfb4e"
+    },
+    {
+      "path": "jeeves/config.py",
+      "category": "same",
+      "sha256": "6079315eba0bc1652d0bcd379338c150bfb0f82adca45c738c44a76a09aa5825"
+    },
+    {
+      "path": "jeeves/proc.py",
+      "category": "same",
+      "sha256": "8ef7a4821599f7682bf728e5bf1ba7533dde2136bd3c99a2061344ee0bc01f5b"
+    },
+    {
+      "path": "jeeves/server.py",
+      "category": "same",
+      "sha256": "d979ee7aad1c65400230b83ff845e16a97c86b90a417351a8a0f147f877f3695"
+    },
+    {
+      "path": "jeeves/sessions.py",
+      "category": "same",
+      "sha256": "2d0db19aed11f5ea747536f6e10b620253d8a6b9b3f73437e1207d0cb16693e3"
+    },
+    {
+      "path": "jeeves/static/app.css",
+      "category": "same",
+      "sha256": "c24fd11bda2db7a19f8ced77649d04d5f7ca1a64188760746ec3fd2a88e218c3"
+    },
+    {
+      "path": "jeeves/static/app.js",
+      "category": "same",
+      "sha256": "a2c987cb111789e1791f5481092935a17f9e1764b9a2a14ad8c2fccd3a7aa074"
+    },
+    {
+      "path": "jeeves/static/index.html",
+      "category": "same",
+      "sha256": "ae7d1da26b823d4dab3fde3621c6dc5cf6149456b0fbc15a1a03817270459794"
+    },
+    {
+      "path": "jeeves/static/orb.js",
+      "category": "same",
+      "sha256": "58d2ce4ca52ebd25eb032af8e002debedc4b7ea9342ac02cfd82b9758ea6f672"
+    },
+    {
+      "path": "jeeves/static/vendor/dockview/LICENSE",
+      "category": "same",
+      "sha256": "1d56757fdc06c9b33c0f80821efe4f4b11960dd7fb6544232cff61752101f513"
+    },
+    {
+      "path": "jeeves/static/vendor/dockview/dockview-core.esm.min.js",
+      "category": "same",
+      "sha256": "8fa8c2a3422b6e4365b029db93b8865dc275c95c210b482880940d85ea5b9445"
+    },
+    {
+      "path": "jeeves/static/vendor/dockview/dockview.css",
+      "category": "same",
+      "sha256": "e46f6d9d72bf780114be5c2f3b3dbaae517f3e45b5e801fdd26519bcc951bd9d"
+    },
+    {
+      "path": "jeeves/vaults.py",
+      "category": "same",
+      "sha256": "bfd8722f2152f3b347572ec9f63c9d51c2d5f7e8c6c2c0c887f5ba6ecdb5973b"
+    },
+    {
+      "path": "start.py",
+      "category": "same",
+      "sha256": "6d7446c4aa4a9b5c475b746b5f9e52b3d0821623dbb0d30259478f7bf33e0606"
+    },
+    {
+      "path": "tests/conftest.py",
+      "category": "same",
+      "sha256": "d0b09e4f5c90d2ffdacffb03e81c4fe6cb9a0523e78f3fef9b16164cdac95dea"
+    },
+    {
+      "path": "tests/mac/mac_app_links.py",
+      "category": "same",
+      "sha256": "1d3e223f94be0be496a6a4f11d3b3949939765aa624ae640eb93e37ea4a521fa"
+    },
+    {
+      "path": "tests/mac/mac_finds_claude_in_local_bin.py",
+      "category": "same",
+      "sha256": "3bcd42a0796b184a423dbec38719d933afcd0b4def53a648b3eb538b51d5194c"
+    },
+    {
+      "path": "tests/mac/mac_printed_commands_python3.py",
+      "category": "same",
+      "sha256": "f57916800eb96ab586db82870043f728badfc40caea6d6dad95f5c1b27cd36f1"
+    },
+    {
+      "path": "tests/mac/mac_repo_setting.py",
+      "category": "same",
+      "sha256": "d92de97829d790f4a8aa8c4c0c31cf507f20f03d22467ef41ace5dae5255ba93"
+    },
+    {
+      "path": "tests/mac/mac_server_starts_quickly.py",
+      "category": "same",
+      "sha256": "0d65721a7ac180c40c1c5644604719b4c94440d4950ffbc7462b0ae4620f2449"
+    },
+    {
+      "path": "tests/mac/mac_stop_spares_caller.py",
+      "category": "same",
+      "sha256": "f5a723f29ed78eb135834127f7f0396b18228748361dd01f018886baa177f84b"
+    },
+    {
+      "path": "tests/mac/mac_today_names_python3.py",
+      "category": "same",
+      "sha256": "66588481064c655037f56ef667cfba9cf196e0a3fea03f72677a2dec95f4fa39"
+    },
+    {
+      "path": "tests/mac/mac_vault_lookup.py",
+      "category": "same",
+      "sha256": "b2d20f27a3e06d80b63d79da6fbf68fa99cc2e5f3831fbed385fc2ca27881572"
+    },
+    {
+      "path": "tests/mac/mac_vault_refusal_shown.py",
+      "category": "same",
+      "sha256": "45e9618864efc18da0d912f5a6b0e9162eacf96ead1da6f50ace41663ff13093"
+    },
+    {
+      "path": "tests/test_chat.py",
+      "category": "same",
+      "sha256": "96439b3c14433a3e976f450ca8343c4ae28414ff73f07f3e3b9f1727e8ea87fe"
+    },
+    {
+      "path": "tests/test_copy.py",
+      "category": "same",
+      "sha256": "84a7c15a5797ddbed680f88e0b1786d4adf1e2a7e4ea0d044e400ebe8aa3ff39"
+    },
+    {
+      "path": "tests/test_fixes.py",
+      "category": "same",
+      "sha256": "4c3aae8c957a5fd38c40402d8ea22bc1d8f50ebbec64adef50787880692b3116"
+    },
+    {
+      "path": "tests/test_install.py",
+      "category": "same",
+      "sha256": "ef641b336ad6d533f0569f46b15e629322331ab5fa25933e7b931c6af7f7a7c5"
+    },
+    {
+      "path": "tests/test_server.py",
+      "category": "same",
+      "sha256": "905615fde456c3c87d3911788a46dc0a01c93d0b7d4688ea4c1af5a2400c7cbe"
+    },
+    {
+      "path": "tests/test_ui.py",
+      "category": "same",
+      "sha256": "8be33166041e16e7247f7703935e10239a19d021254639ae8766bb5cc5b7d5a0"
+    },
+    {
+      "path": "tools/demo.py",
+      "category": "same",
+      "sha256": "ef6d148e80f6d963ab96d9f57ac08d1265ebbf47986c61017d7e76f2deae8976"
+    },
+    {
+      "path": "tools/fake_claude.py",
+      "category": "same",
+      "sha256": "f937b1f72312297bb5830353cad5c42d10e22d64cae837e77d08a48b950b7477"
+    },
+    {
+      "path": "tools/shoot.py",
+      "category": "same",
+      "sha256": "2f7f69655c83711c07f2959d2fbefb9c3f1c6b2bbdb9def5d019321c16193073"
+    }
+  ]
+}
