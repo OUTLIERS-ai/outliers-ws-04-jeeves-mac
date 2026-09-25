@@ -6,7 +6,7 @@ the CRM sessions. Yet the Today panel and the overview card told every member wi
 run `python3 _engine/today.py --write` in the CRM folder, which then fails (GitHub's test Macs,
 run 36154211225). With the program there, the old instruction stays.
 
-Mac only in this wave: the Windows guide's pictures show today's Windows text, which is unchanged.
+The same now holds on every system: tests/mac/mac_today_without_tool_every_system.py.
 
 Run by name only:  python3 -m pytest -q tests/mac/mac_today_without_tool.py
 """

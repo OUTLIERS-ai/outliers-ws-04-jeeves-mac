@@ -21,7 +21,7 @@ This is piece 4 of 4 in the agent workspace. Install them in order: 1 agent-flow
 | Vault | A folder of notes. You have 2: your second brain, and your CRM. |
 | CRM | Your customer-records notes: the folder of people and conversations you built in the CRM sessions. |
 | Claude Code | The Claude program you type to in a terminal. Jeeves sends your chat messages to it. |
-| Terminal | The text window where you type commands. On a Mac it is the Terminal app, in Applications, then Utilities. |
+| Terminal | The text window where you type commands. On a Mac the app is called Terminal: press Command and Space together, type Terminal, press Return. |
 | `~` | Short for your home folder, the folder with your name and the house picture in Finder's sidebar. `~/CRM` is the folder called CRM inside it. |
 | Token | The unit Claude's usage is counted in. 4 tokens are about 3 words. |
 | Model | Which Claude model answers. Jeeves offers 3, each named in full: Claude Opus 5.5 (strongest), Claude Sonnet 5 (middle) and Claude Haiku 4.5 (cheapest). |
@@ -208,7 +208,7 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 
 **Apple Silicon or Intel** (the 2 kinds of chip a Mac can have; the Apple menu, then About This Mac, shows yours): the steps are the same on both, and both were tested.
 
-**Tried only on test Macs** (Macs GitHub rents out by the minute to run scripts, not a person's own Mac): 3 of the steps above were never tried on a real Mac. They are the developer-tools box, macOS stopping a program from opening Documents, and the question about devices on local networks.
+**Tried only on test Macs.** Every step above was tried only on test Macs (Macs GitHub rents out by the minute to run scripts, not a person's own Mac), never on a real Mac. 3 of them cannot happen on a test Mac, so they were not tried at all: the developer-tools box, macOS stopping a program from opening Documents, and the question about devices on local networks.
 
 ### What you need
 
@@ -227,7 +227,7 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 
 ## Install it
 
-1. Open Terminal: press Command and the space bar together, type `Terminal`, press Return. It opens in your home folder, which is where all 4 downloads in this set go.
+1. Open Terminal: press Command and Space together, type `Terminal`, press Return. It opens in your home folder, which is where all 4 downloads in this set go.
 2. Download the code (clone the repo: copy the project from GitHub, the site where it is stored) and go into its folder:
 
 ```
@@ -283,7 +283,7 @@ Notes moved means notes changed in the last 3 days. Left unfinished means checkb
 
 Across everything reads the numbered table in `Today.md`: 1 row per person, with a number, a name and a reason, for example the first row of the pictures above: 1, Priya Shah (a made-up name), Replied. The CRM sessions write it with those 3 columns first; if you write your own, keep the number, the name and the reason in that order. If those columns are not there, the panel says so rather than claiming nobody is waiting.
 
-**Today.** Your CRM's ranked page as it is, then your second brain. If you keep daily notes named by date (for example `Daily/2026-09-23.md`, or the same name in a folder called Daily Notes, Journal, Diary or Calendar), today's note appears. Other folders go in `config.json` under `"daily_note_folders"`. If you do not keep daily notes, you still see what changed and what is left unticked. Each note name shown in gold is a link. To make a fresh Today page, open a terminal in your CRM folder and type `python3 _engine/today.py --write` (the CRM's own program that writes `Today.md`).
+**Today.** Your CRM's ranked page as it is, then your second brain. If you keep daily notes named by date (for example `Daily/2026-09-23.md`, or the same name in a folder called Daily Notes, Journal, Diary or Calendar), today's note appears. Other folders go in `config.json` under `"daily_note_folders"`. If you do not keep daily notes, you still see what changed and what is left unticked. Each note name shown in gold is a link. To make a fresh Today page, once your CRM has its Today program (part 7 of the CRM sessions), open Terminal, type `cd ~/CRM`, then `python3 _engine/today.py --write` (the CRM's own program that writes `Today.md`).
 
 ![Today: the CRM page, then the day in the second brain](img/panel-today.png)
 
@@ -555,7 +555,7 @@ changed.
 | "Still answering your last message" | You sent a message while the last answer was coming in. | Wait, or press Stop, then send again. |
 | Answers feel weak | The model menu is on `fast`, the smallest model. Ashley's first Jeeves had this problem when its default was set to the smallest model. | Pick `best` in the model menu. |
 | A panel is empty | The file it reads is missing. (In Ashley's first Jeeves a panel stayed empty when it was filled before it appeared on screen. This rebuild waits for each panel, so an empty panel now means its file is missing.) | Press the refresh arrow on the panel. Read the message in it: it says which file it looked for. |
-| "Nobody is waiting on you" but your CRM has people | `Today.md` is not in the numbered shape (number, name, reason). | Rebuild it with `python3 _engine/today.py --write` in your CRM folder. |
+| "Nobody is waiting on you" but your CRM has people | `Today.md` is not in the numbered shape (number, name, reason). | Once your CRM has its Today program (part 7 of the CRM sessions), rebuild it: open Terminal, type `cd ~/CRM`, then `python3 _engine/today.py --write`. |
 | Work board or FleetView says "not running" | Jeeves only looks. It never starts another app, because in Ashley's first Jeeves, starting another app itself left 2 copies of that app competing for the same port. | Start ProjectForge or FleetView yourself, then press the refresh arrow. |
 | An embedded app is blank | An app can refuse to be shown inside another page. | Use the "open in its own tab" link in the panel's top line. |
 | Token totals looked doubled | Claude Code writes the same reply more than once in its logs. | Fixed: each reply is counted once. If your numbers still differ from ccusage's, trust ccusage. |

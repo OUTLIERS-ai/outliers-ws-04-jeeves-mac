@@ -1,10 +1,10 @@
 {
   "main": "outliers-ws-04-jeeves",
-  "main_commit": "384fad6746066c8fde05777813ee399532d7fc9f",
+  "main_commit": "ee0867d331fdb785c7c98bb8746e705e2b38c0e6",
   "mac": "outliers-ws-04-jeeves-mac",
   "macgen_commit": "9c2578fc+uncommitted",
   "date": "2026-09-25",
-  "fingerprint": "2421607f37911b9bd263ce7201a4dfdeb426395b056e43fc37670722606a6da1",
+  "fingerprint": "8a135da5fcfdb3fec39306c5a3860bd4d11aeb58307a4e1d05e76a4f22bb66e7",
   "left_out_of_fingerprint": [
     ".mac-version.json",
     "guide/Jeeves A Personal-Assistant Cockpit Over Your Own Second Brain (Mac).pdf",
@@ -24,7 +24,7 @@
     {
       "path": "README.md",
       "category": "changed",
-      "sha256": "bd72d79b2579c14b74223876bf564cc4b1647da6752772aa452e67fbb23a4bdf"
+      "sha256": "3a6e2c8eb17ed11fd5ffd908ddee457dbab5500a108a1243d18df5119c94ff39"
     },
     {
       "path": "WHAT-I-STOLE.md",
@@ -39,7 +39,7 @@
     {
       "path": "guide/GUIDE.md",
       "category": "changed",
-      "sha256": "34a7d46188425b4bfc149e6f502faff5b0249dbbb4d84080900aa1f39f91d6ee"
+      "sha256": "f6a349e73ff19f6989a9af8d998857ea4eea01aa4e46bf1a39ce87bb27ebd3fc"
     },
     {
       "path": "guide/Jeeves A Personal-Assistant Cockpit Over Your Own Second Brain (Mac).pdf",
@@ -178,7 +178,7 @@
     {
       "path": "guide/img/new-member.png",
       "category": "same",
-      "sha256": "c49d6144906508929bbe2c9981322424f0e0940974de5b7fd090ad15f3f8bd45"
+      "sha256": "5cd1e099d325267bf3e079a55653249525a2f8dcabf5ee47da940859e62a1d4b"
     },
     {
       "path": "guide/img/no-claude.png",
@@ -357,7 +357,7 @@
     {
       "path": "jeeves/vaults.py",
       "category": "same",
-      "sha256": "fab21d12ad82f78feb0991f13a46add085c349e35f52abde8c47fcc5636af067"
+      "sha256": "ed95e1473e36fd474fc21b8c54a28fa62f2e5e92dbe75caed3006c7922edb2b2"
     },
     {
       "path": "start.py",
@@ -427,7 +427,12 @@
     {
       "path": "tests/mac/mac_today_without_tool.py",
       "category": "same",
-      "sha256": "9b16cebdcdbea3af54c8cde8e34661d4c27dbfb77a71b71ffb6802ac3ee79f18"
+      "sha256": "bff2a7a3d11cb9b507fe449fda1f23b6b79661ab20d6ebf693edc0b1172cdffe"
+    },
+    {
+      "path": "tests/mac/mac_today_without_tool_every_system.py",
+      "category": "same",
+      "sha256": "fbe2318b4e8ad6488b2657564464985c60372dee6b55b8e36d5b95101c96bc55"
     },
     {
       "path": "tests/mac/mac_uninstall_unloads_launchagent.py",
@@ -487,7 +492,7 @@
     {
       "path": "tools/shoot.py",
       "category": "same",
-      "sha256": "2f7f69655c83711c07f2959d2fbefb9c3f1c6b2bbdb9def5d019321c16193073"
+      "sha256": "ac66ca4d9029233bf1f7793cb3931ac7690f36a6c0aebf8393455493420ccc79"
     }
   ]
 }

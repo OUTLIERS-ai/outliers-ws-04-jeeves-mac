@@ -406,7 +406,7 @@ def main(work, out, only=None):
         np_.goto(base2 + "/")
         wait_ready(np_)
         items = [{"sel": ".banner", "n": 1, "at": "left", "label": "No Claude Code: Chat says so, lists the 3 steps and links to the download page. Every other panel works."},
-                 {"sel": "[data-card=people]", "n": 2, "at": "left", "label": "No Today.md yet: it says so, with the command that builds it."},
+                 {"sel": "[data-card=people]", "n": 2, "at": "left", "label": "No Today.md yet: it says so, and that your CRM gets its Today list in part 7 of the CRM sessions."},
                  {"sel": "[data-card=decide]", "n": 3, "at": "right", "label": "No Recommendations file yet: it names the file to create."}]
         raw = shoot_annotated(np_, "new-member.png", items, tmp, 1600)
         legend_png(draw, raw, items, save("new-member.png"), 1600)
